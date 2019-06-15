@@ -1,5 +1,5 @@
 import React from 'react';
-//import List from './List'
+import List from './List';
 import './App.css';
 
 class App extends React.Component {
@@ -36,15 +36,10 @@ class App extends React.Component {
   }
   render() {
     return (
-      <p>{this.state.pokemon
-        .map(item => {
-          return (
-            <p>{item.name}</p>
-          )
-        })}</p>
-      // <List 
-      // pokemon={this.state.pokemon}
-      // />
+     
+      <List 
+      pokemon={this.state.pokemon}
+      />
       );
   }
 }
