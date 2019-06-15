@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+//import List from './List'
 import './App.css';
 
 class App extends React.Component {
@@ -7,7 +7,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      pokemon: [],
+      pokemon: []
     }
     this.getPokemon = this.getPokemon.bind(this);
   }
@@ -19,28 +19,33 @@ class App extends React.Component {
       .then(res => res.json())
       .then(data => {
         data.results.map(item => {
-          fetch(item.url)
-            .then(res => res.json())
-            .then(moredata => {
-              console.log('moredata', moredata);
+          return (
+            fetch(item.url)
+              .then(res => res.json())
+              .then(moreData => {
+                const hola = this.state.pokemon;
+                hola.push(moreData);
+                console.log('hola', hola)
+                this.setState({
+                  pokemon: hola
+              })
             })
-          })
-          // fetch(item.url)
-          //   .then(res => res.json())
-          //   .then(moredata => {
-          //     console.log(moredata);
-          //     this.setState({
-          //       pokemon: moredata
-          //     })
-          //   }))
-        // console.log(data) ;
-        // this.setState({
-        //   pokemon: data
-        // })
+          )
+        })
       })
   }
   render() {
-    return (<p>Hola</p>);
+    return (
+      <p>{this.state.pokemon
+        .map(item => {
+          return (
+            <p>{item.name}</p>
+          )
+        })}</p>
+      // <List 
+      // pokemon={this.state.pokemon}
+      // />
+      );
   }
 }
 
