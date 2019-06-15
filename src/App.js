@@ -23,11 +23,11 @@ class App extends React.Component {
             fetch(item.url)
               .then(res => res.json())
               .then(moreData => {
-                const hola = this.state.pokemon;
-                hola.push(moreData);
-                console.log('hola', hola)
+                const pokeState = this.state.pokemon;
+                pokeState.push(moreData);
+                pokeState.sort();
                 this.setState({
-                  pokemon: hola
+                  pokemon: pokeState
               })
             })
           )

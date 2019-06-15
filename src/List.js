@@ -6,18 +6,19 @@ class List extends React.Component {
       <ul>
        {this.props.pokemon
         .map(item => {
-          return (<li><h2>{item.name}</h2><img src={item.sprites.front_default} alt={item.name} /> 
-          <ul>
-            {item.types
-              .map(type => {
-                return (
-                  <li>{type.type.name}</li>
-                );
-              })}
-          </ul>
-          
-          
-          
+          return (
+            <li>
+              <h2>{item.name}</h2>
+              <img src={item.sprites.front_default} alt={`Imagen de ${item.name}`} /> 
+            <ul>
+              {item.types
+                .map(type => {
+                  return (
+                    <li>{type.type.name}</li>
+                  );
+                })}
+            </ul>
+            <p>{`ID: ${item.id}`}</p>
           </li>);
         })}
       </ul>
