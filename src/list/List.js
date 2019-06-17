@@ -7,6 +7,7 @@ class List extends React.Component {
     return(
       <ul className="poke_list">
        {this.props.pokemon
+        .filter(item =>item.name.toLocaleLowerCase().includes(this.props.filterName))
         .map(item => {
           return (
             <li className="poke_item">

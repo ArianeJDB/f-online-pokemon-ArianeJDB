@@ -1,5 +1,6 @@
 import React from 'react';
 import List from './list/List';
+import FilterName from './filters/FilterName';
 import './App.css';
 import {fetchPokemon} from './services/pokeFetch';
 
@@ -8,9 +9,11 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      pokemon: []
+      pokemon: [],
+      filterName: ''
     }
     this.getPokemon = this.getPokemon.bind(this);
+    this.handleFilterName = this.handleFilterName.bind(this);
   }
   componentDidMount(){
     this.getPokemon();
@@ -34,11 +37,27 @@ class App extends React.Component {
         })
       })
   }
+
+  handleFilterName(e) {
+    const value = e.currentTarget.value;
+    this.setState({
+      filterName: value
+    })
+  }
   render() {
     return (
+      <React.Fragment>
+      <FilterName 
+        handleFilterName={this.handleFilterName}
+        filterName={this.state.filterName}
+      />
       <List 
       pokemon={this.state.pokemon}
+      handleFilterName={this.handleFilterName}
+      filterName={this.state.filterName}
+
       />
+      </React.Fragment>
       );
   }
 }
