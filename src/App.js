@@ -1,5 +1,5 @@
 import React from 'react';
-import List from './List';
+import List from './list/List';
 import './App.css';
 import {fetchPokemon} from './services/pokeFetch';
 
@@ -25,7 +25,6 @@ class App extends React.Component {
               .then(moreData => {
                 const pokeState = this.state.pokemon;
                 pokeState.push(moreData);
-                // pokeState.sort();
                 this.setState({
                   pokemon: pokeState
               })
@@ -36,7 +35,6 @@ class App extends React.Component {
   }
   render() {
     return (
-     
       <List 
       pokemon={this.state.pokemon}
       />

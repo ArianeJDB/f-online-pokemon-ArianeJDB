@@ -1,0 +1,12 @@
+.poke_list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.poke_item {
+  list-style: none;
+  border: solid 1px gray;
+  text-align: center;
+}

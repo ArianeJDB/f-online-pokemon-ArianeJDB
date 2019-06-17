@@ -1,0 +1,20 @@
+.types_list {
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+}
+.type_item {
+  list-style: none;
+  
+}
+
+.tags {
+  list-style: none;
+  background-color: gray;
+  border-radius: 8px;
+  margin: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 2px;
+  color: #fff;
+}

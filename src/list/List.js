@@ -1,14 +1,15 @@
 import React from 'react';
-import PokeCard from './PokeCard';
+import PokeCard from '../card/PokeCard';
+import './list.css'
 
 class List extends React.Component {
   render() {
     return(
-      <ul>
+      <ul className="poke_list">
        {this.props.pokemon
         .map(item => {
           return (
-            <li>
+            <li className="poke_item">
               <PokeCard 
                 name={item.name}
                 image={item.sprites.front_default}
