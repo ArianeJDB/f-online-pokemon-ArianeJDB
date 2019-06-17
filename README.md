@@ -1,68 +1,26 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hola, esta es la primera prueba de la formación online de Adalab, que simula una prueba técnica.
 
-## Available Scripts
+Se nos ha pedido lo siguiente: 
 
-In the project directory, you can run:
+[x] Debe tener un listado de pokemon, donde debe aparecer al menos su foto, nombre, número y tipo (o tipos).
 
-### `npm start`
+[x] Deben aparecer los 25 primeros pokemon (para tener la info detallada de cada uno, tendremos que hacer una petición al servidor y recordad que hay un límite)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[x]Los pokemon deben poder filtrarse por nombre.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
+Se nos proporcionó la API https://pokeapi.co/ y el primer gran reto fue entenderme con ella, ya que es mucha información, varias peticiones (por lo que se tuvo que hacer para su desarrollo peticiones encadenadas) y costó encontrar, por ejemplo, la foto. Una vez entendida la API, ya procedí a hacer las peticiones, en la que en la primera no hubo necesidad de actualizarla en el estado, ya que sólo necesitaba la URL de cada item para hacer la segunda petición y, de acuerdo a esa nueva data proporcionada, es que he actualizado el estado y de ahí, fui sacando la información que necesitaba (nombre, foto, tipos e id).
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Arquitectura de componentes:
 
-### `npm run build`
+De la App sale un componente para el listado general (List.js) que recibe por props la información de la segunda petición y dentro de ese componente está uno que es el que se reutiliza para cada tarjeta de cada pokemon (PokeCard.js).
+También hay un componente aparte para el filtro por nombre (FilterName.js) y el del Endpoint de la API (fetchPokemon.js) dentro de la carpeta 'services'.
+Cada componente está en una carpeta la cual contiene el fichero js y su estilo correspondiente en CSS, de manera que cada componente tiene su propio fichero de estilos.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Se ha intentado seguir los estilos del modelo que nos han dado.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Espero haber cumplido los requisitos deseados.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Gracias, 
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Ari
