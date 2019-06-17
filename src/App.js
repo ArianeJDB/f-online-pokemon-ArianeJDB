@@ -1,6 +1,7 @@
 import React from 'react';
 import List from './List';
 import './App.css';
+import {fetchPokemon} from './services/pokeFetch';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,8 +16,7 @@ class App extends React.Component {
     this.getPokemon();
   }
   getPokemon() {
-    fetch('https://pokeapi.co/api/v2/pokemon?=25&limit=25')
-      .then(res => res.json())
+    fetchPokemon()
       .then(data => {
         data.results.map(item => {
           return (
@@ -25,7 +25,7 @@ class App extends React.Component {
               .then(moreData => {
                 const pokeState = this.state.pokemon;
                 pokeState.push(moreData);
-                pokeState.sort();
+                // pokeState.sort();
                 this.setState({
                   pokemon: pokeState
               })
