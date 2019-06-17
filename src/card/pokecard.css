@@ -8,6 +8,14 @@
   
 }
 
+.card_name {
+  margin-top: 0;
+}
+
+.id {
+  text-align: start;
+  margin-bottom: 0;
+}
 .tags {
   list-style: none;
   background-color: gray;
@@ -17,4 +25,14 @@
   padding-left: 10px;
   padding-bottom: 2px;
   color: #fff;
+}
+
+.grey_container {
+  background-color: rgb(185, 181, 181);
+}
+
+.white_container {
+  background-color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
