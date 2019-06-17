@@ -10,7 +10,7 @@ class List extends React.Component {
         .filter(item =>item.name.toLocaleLowerCase().includes(this.props.filterName))
         .map(item => {
           return (
-            <li className="poke_item">
+            <li className="poke_item" key={item.id}>
               <PokeCard 
                 name={item.name}
                 image={item.sprites.front_default}

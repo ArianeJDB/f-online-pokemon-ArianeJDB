@@ -15,7 +15,7 @@ class PokeCard extends React.Component {
             {this.props.types
                   .map(type => {
                     return (
-                      <li className="type_item">
+                      <li className="type_item" key={type.type.name}>
                         <div className="tags">{type.type.name}</div>
                       </li>
                     );
