@@ -25,6 +25,7 @@ class App extends React.Component {
               .then(moreData => {
                 const pokeState = this.state.pokemon;
                 pokeState.push(moreData);
+                pokeState.sort((a, b) => a.id - b.id);
                 this.setState({
                   pokemon: pokeState
               })
